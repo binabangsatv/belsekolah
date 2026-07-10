@@ -17,15 +17,23 @@
 
     .iframe-container {
       width: 100%;
-      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
+      height: 100dvh; 
       overflow: hidden;
+      position: relative;
     }
 
     iframe {
       display: block;
       width: 100%;
-      height: 100%;
+      /* Meningkatkan tinggi iframe agar bagian bawah tidak terpotong 
+        setelah digeser ke atas sebesar 45px
+      */
+      height: calc(100% + 45px); 
       border: none;
+      /* TRIK UTAMA: Menggeser iframe ke atas untuk 
+        menyembunyikan spanduk biru Google
+      */
+      margin-top: -45px; 
     }
   </style>
 </head>
@@ -33,7 +41,7 @@
   <div class="iframe-container">
     <iframe
       id="app"
-      src="https://script.google.com/macros/s/AKfycbxYZOTzEBaRr9AUTczvO603eP077o8cg24nOD8dT1eOmOw3NYfOzRVQmyHYJsu9bnSN2A/exec"
+      src="https://script.google.com/macros/s/AKfycbxunFw9APNPfzdga_2sLLwiZSYrJwIbhtpd0udIEolQPYvOwTDAfR0I39JCh7X43Fh_/exec"
       scrolling="yes"
       allowfullscreen="true"
       webkitallowfullscreen="true"
